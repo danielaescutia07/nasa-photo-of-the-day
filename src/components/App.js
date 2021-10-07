@@ -4,6 +4,15 @@ import { BASE_URL, API_KEY } from '../constants';
 import axios from "axios";
 import Picture from "./Picture";
 import Header from "./Header";
+import Footer from "./Footer";
+
+import styled from "styled-components";
+
+const StyleAll = styled.div `
+  background-color: ${props => props.theme.backgroundColor};
+  color: ${props => props.theme.textColor};
+  font-family: ${props => props.theme.font};
+`
 
 function App() {
   const[nasa, setNasa] = useState([]);
@@ -20,11 +29,11 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
+    <StyleAll className="App">
       <Header />
-      {nasa && <Picture nasa={nasa}  />}
-      
-    </div>
+      {nasa && <Picture image={nasa.url} title={nasa.title} date={nasa.date} explanation={nasa.explanation} />}
+      <Footer copyright={nasa.copyright} />
+    </StyleAll>
   );
 }
 
