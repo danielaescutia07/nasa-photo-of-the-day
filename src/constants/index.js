@@ -1,2 +1,2 @@
 export const BASE_URL = 'https://api.nasa.gov/planetary/apod';
-export const API_KEY = 'BJU3ceeC5iR3UBRcYsY8gGfnPYwCTO0uDiPKSwCm';
+export const API_KEY = '94xRo3F8xdLsnhLmGdi5rfYh5HcXrlCFxGgf3NPr';
