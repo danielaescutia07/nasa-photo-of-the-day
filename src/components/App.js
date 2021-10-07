@@ -3,6 +3,7 @@ import "./App.css";
 import { BASE_URL, API_KEY } from '../constants';
 import axios from "axios";
 import Picture from "./Picture";
+import Header from "./Header";
 
 function App() {
   const[nasa, setNasa] = useState([]);
@@ -11,7 +12,7 @@ function App() {
   useEffect(() => {
     axios.get(`${BASE_URL}?api_key=${API_KEY}`)
       .then(resp => {
-        console.log(resp)
+        // console.log(resp)
         setNasa(resp.data);
       }).catch(err => {
         console.error(err);
@@ -20,9 +21,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>
-        Astronomy Picture of the Day
-      </h1>
+      <Header />
       {nasa && <Picture nasa={nasa}  />}
       
     </div>
